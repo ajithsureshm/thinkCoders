@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-4">
+            <button id="addUser" (click)="openAddModal(addcontent)"><i class="fa-solid fa-plus"></i>Add User</button>
+        </div>
+        <div class="col-12">
+            <app-primengtable></app-primengtable>
+        </div>
+    </div>
+
+    <!--add modal -->
+    <ng-template #addcontent let-modal [formGroup]="addForm">
+        <div class="modal-header pl-5 pr-5 pt-5">
+            <h4 class="modal-title"><b>Add User</b></h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"><i
+                    class="fa fa-close"></i></button>
+        </div>
+        <div class="modal-body pl-5 pr-5">
+            <div class="row">
+                <div class="col-md-12 pl-5 pr-5">
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Email *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="text" formControlName="addemail" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Email">
+                    </div>
+
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Name *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="email" formControlName="addname" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Name">
+                    </div>
+                    <div class="form-groups pb-2">
+                    </div>
+
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Gender *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="text" formControlName="addgender" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Gender">
+                    </div>
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Status *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="email" formControlName="addstatus" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Status">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer pl-1 pr-5 pt-3">
+            <div class="col-md-5">
+                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="addUser()">Add
+                    User</button>
+            </div>
+
+            <!-- (click)="modal.close('Close click')" -->
+        </div>
+    </ng-template>
+</div>

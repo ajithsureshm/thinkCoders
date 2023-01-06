@@ -1,0 +1,19 @@
+#addUser {
+  background: #82db82;
+  color: white;
+  border-radius: 6px;
+  transition: 0.5s;
+  border: none;
+  outline: none;
+}
+
+#btn {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    background: #ff5d5d;
+    border-radius: 6px;
+    transition: 0.5s;
+  }

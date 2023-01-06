@@ -1,0 +1,129 @@
+span {
+  color: #9d9999;
+}
+
+.firstDivBorderBottom {
+  border-bottom: 1px solid lightgrey;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    margin-left: 4rem;
+  }
+  .visaFont {
+    display: flex;
+    align-items: center;
+    transform: scale(2);
+  }
+}
+
+/* .box-1{
+  border: 1px solid lightgrey;
+} */
+
+.box-1 .rowstyle {
+  border: 1px solid lightgrey;
+  margin: 4px 1px;
+  height: 12rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 11px 9px 8px -6px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 11px 9px 8px -6px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 11px 9px 8px -6px rgba(0, 0, 0, 0.38);
+}
+
+.box-2 .rowstyle {
+  border: 1px solid lightgrey;
+  margin: 4px 1px;
+  height: 12rem;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 11px 9px 8px -6px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 11px 9px 8px -6px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 11px 9px 8px -6px rgba(0, 0, 0, 0.38);
+}
+.secondRowBox1Sub-1 :nth-child(1) span {
+  color: green;
+  background: aliceblue;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.secondRowBox1Sub-1 span {
+  font-size: 14px;
+}
+
+.secondRowBox1Sub-2 span {
+  font-size: 14px;
+}
+
+.secondRowBox2Sub-1 :nth-child(1) span {
+  font-size: 14px;
+}
+
+.visa {
+  border: 1px solid lightgrey;
+  margin: 4px 1px;
+  height: 5rem;
+  border-radius: 5px;
+}
+
+.visa :nth-child(2) {
+  font-size: 19px;
+  font-family: system-ui;
+}
+/* 
+.visaFont {
+  display: flex;
+  align-items: center;
+  transform: scale(2);
+} */
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (max-width: 992px) {
+  .visa {
+    height: 6.5rem;
+  }
+  .edit {
+    border: 1px solid #afabab;
+    padding: 1px 8px;
+    border-radius: 4px;
+    margin: 0;
+    margin-top: -2rem;
+  }
+}
+
+.edit {
+  border: 1px solid #afabab;
+  padding: 1px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  width: 54px;
+  margin-top: 2rem;
+  color: #000;
+}
+
+.thirdRowMain :nth-child(2) div {
+  border: 1px solid #afabab;
+  border-radius: 4px;
+  padding: 2px 2px;
+}
+
+.dwn{
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.progress-inner{
+  background-color: rgb(72, 138, 255);
+    height: 14px !important;
+    width: 370px !important;
+}

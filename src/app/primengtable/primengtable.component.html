@@ -1,0 +1,93 @@
+<div class="row mt-5 forthRowTable">
+    <div class="col-12">
+        <p-table [value]="getTasks" (sortFunction)="customSort($event)" [customSort]="true"
+            [tableStyle]="{'width': '100%'}" [sortOrder]="1">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Code
+                    </th>
+                    <th pSortableColumn="name" style="width:20%">Name <p-sortIcon field="name"></p-sortIcon>
+                    </th>
+                    <th>Gender
+                    </th>
+                    <th>Gmail
+                    </th>
+                    <th>Status
+                    </th>
+                </tr>
+                <!-- <tr *ngFor="let task of getTasks">
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+                <td>{{task.gender}}</td>
+                <td>{{task.email}}</td>
+                <td>{{task.status}}</td>
+                let-getTask
+            </tr> -->
+            </ng-template>
+            <ng-template pTemplate="body">
+                <tr *ngFor="let getTask of getTasks" (mouseover)="highlightRow(getTask)" (mouseout)="normalRow(getTask)"
+                    [ngClass]="{'highlight' : getTask.name == selectedName}"
+                    [ngClass]="{'backNormal' : getTask.name == selectedForNormal}" (click)="openXl(content, getTask.id)"
+                    (click)="getUserID(getTask.id)">
+                    <td>{{getTask.id}}</td>
+                    <td>{{getTask.name}}</td>
+                    <td>{{getTask.gender}}</td>
+                    <td>{{getTask.email}}</td>
+                    <td *ngIf="getTask.status == 'active'" class="my-center-text"><span
+                            class="activeClass">{{getTask.status}}</span></td>
+                    <td *ngIf="getTask.status != 'active'" class="my-center-text"><span>{{getTask.status}}</span></td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+    <!--edit modal -->
+    <ng-template #content let-modal [formGroup]="editForm">
+        <div class="modal-header pl-5 pr-5 pt-5">
+            <h4 class="modal-title"><b>Edit User</b></h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"><i
+                    class="fa fa-close"></i></button>
+        </div>
+        <div class="modal-body pl-5 pr-5">
+            <div class="row">
+                <div class="col-md-12 pl-5 pr-5">
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Email *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="text" formControlName="email" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Email">
+                    </div>
+
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Name *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="email" formControlName="fname" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Name">
+                    </div>
+                    <div class="form-groups pb-2">
+                    </div>
+
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Gender *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="text" formControlName="gender" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Gender">
+                    </div>
+                    <div class="form-groups pb-2 ">
+                        <label for="exampleInputEmail1">Status *</label>&nbsp;&nbsp;&nbsp;
+                        <input type="email" formControlName="status" required class="form-control bg-light"
+                            aria-describedby="emailHelp" placeholder="Enter Status">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer pl-1 pr-5 pt-3">
+            <div class="col-md-5">
+                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="deleteGetUser()"> <i class="fa-solid fa-trash"></i> Delete
+                    User</button>
+            </div>
+            <div class="col-md-5">
+                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="updateGetUser()"> <i class="fa-solid fa-pen-to-square"></i> Edit
+                    User</button>
+            </div>
+            <!-- (click)="modal.close('Close click')" -->
+        </div>
+    </ng-template>
+</div>
