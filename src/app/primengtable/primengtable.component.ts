@@ -6,7 +6,7 @@ import { FormControl, FormGroup, RequiredValidator, Validators } from "@angular/
 @Component({
   selector: 'app-primengtable',
   templateUrl: './primengtable.component.html',
-  styleUrls: ['./primengtable.component.css']
+  styleUrls: ['./primengtable.component.scss']
 })
 export class PrimengtableComponent implements OnInit {
   getTasks: any

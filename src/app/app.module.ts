@@ -15,7 +15,9 @@ import {ButtonModule} from 'primeng/button';
 import { PrimengtableComponent } from './primengtable/primengtable.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ProgressBarModule} from "angular-progress-bar";
-import { ProgressivebarComponent } from './progressivebar/progressivebar.component'
+import { ProgressivebarComponent } from './progressivebar/progressivebar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+// import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { ProgressivebarComponent } from './progressivebar/progressivebar.compone
     MainUiComponent,
     UsersComponent,
     PrimengtableComponent,
-    ProgressivebarComponent
+    ProgressivebarComponent,
+    // MatSliderModule
   ],
   imports: [
     // NgbModule,
@@ -36,7 +39,8 @@ import { ProgressivebarComponent } from './progressivebar/progressivebar.compone
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ProgressBarModule
+    ProgressBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

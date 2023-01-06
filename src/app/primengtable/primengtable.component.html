@@ -1,45 +1,32 @@
 <div class="row mt-5 forthRowTable">
-    <div class="col-12">
-        <p-table [value]="getTasks" (sortFunction)="customSort($event)" [customSort]="true"
-            [tableStyle]="{'width': '100%'}" [sortOrder]="1">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>Code
-                    </th>
-                    <th pSortableColumn="name" style="width:20%">Name <p-sortIcon field="name"></p-sortIcon>
-                    </th>
-                    <th>Gender
-                    </th>
-                    <th>Gmail
-                    </th>
-                    <th>Status
-                    </th>
-                </tr>
-                <!-- <tr *ngFor="let task of getTasks">
-                <td>{{task.id}}</td>
-                <td>{{task.name}}</td>
-                <td>{{task.gender}}</td>
-                <td>{{task.email}}</td>
-                <td>{{task.status}}</td>
-                let-getTask
-            </tr> -->
-            </ng-template>
-            <ng-template pTemplate="body">
-                <tr *ngFor="let getTask of getTasks" (mouseover)="highlightRow(getTask)" (mouseout)="normalRow(getTask)"
-                    [ngClass]="{'highlight' : getTask.name == selectedName}"
-                    [ngClass]="{'backNormal' : getTask.name == selectedForNormal}" (click)="openXl(content, getTask.id)"
-                    (click)="getUserID(getTask.id)">
-                    <td>{{getTask.id}}</td>
-                    <td>{{getTask.name}}</td>
-                    <td>{{getTask.gender}}</td>
-                    <td>{{getTask.email}}</td>
-                    <td *ngIf="getTask.status == 'active'" class="my-center-text"><span
-                            class="activeClass">{{getTask.status}}</span></td>
-                    <td *ngIf="getTask.status != 'active'" class="my-center-text"><span>{{getTask.status}}</span></td>
-                </tr>
-            </ng-template>
-        </p-table>
-    </div>
+    <p-table [value]="getTasks" [responsive]="true" responsiveLayout="scroll | stack" [scrollable]="true"
+        scrollHeight="flex" (sortFunction)="customSort($event)" [customSort]="true" [tableStyle]="{'width': '100%'}"
+        [sortOrder]="1">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Code</th>
+                <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon> </th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" class="tbody">
+            <tr *ngFor="let getTask of getTasks" (mouseover)="highlightRow(getTask)" (mouseout)="normalRow(getTask)"
+                [ngClass]="{'highlight' : getTask.name == selectedName}"
+                [ngClass]="{'backNormal' : getTask.name == selectedForNormal}" (click)="openXl(content, getTask.id)"
+                (click)="getUserID(getTask.id)">
+                <td id="alignItemsCentre">{{getTask.id}}</td>
+                <td id="alignItemsCentre">{{getTask.name}}</td>
+                <td id="alignItemsCentre">{{getTask.gender}}</td>
+                <td id="email">{{getTask.email}}</td>
+                <td id="alignItemsCentre" *ngIf="getTask.status == 'active'" class="my-center-text"><span
+                        class="activeClass">{{getTask.status}}</span></td>
+                <td  *ngIf="getTask.status != 'active'" class="my-center-text" ><span 
+                    >{{getTask.status}}</span></td>
+            </tr>
+        </ng-template>
+    </p-table>
 
     <!--edit modal -->
     <ng-template #content let-modal [formGroup]="editForm">
@@ -80,11 +67,13 @@
         </div>
         <div class="modal-footer pl-1 pr-5 pt-3">
             <div class="col-md-5">
-                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="deleteGetUser()"> <i class="fa-solid fa-trash"></i> Delete
+                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="deleteGetUser()"> <i
+                        class="fa-solid fa-trash"></i> Delete
                     User</button>
             </div>
             <div class="col-md-5">
-                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="updateGetUser()"> <i class="fa-solid fa-pen-to-square"></i> Edit
+                <button type="button" id="btn" (click)="modal.close('Close click')" (click)="updateGetUser()"> <i
+                        class="fa-solid fa-pen-to-square"></i> Edit
                     User</button>
             </div>
             <!-- (click)="modal.close('Close click')" -->

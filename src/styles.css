@@ -4,3 +4,6 @@
 @import url("../node_modules/primeng/resources/themes/saga-orange/theme.css");
 @import url("../node_modules/primeng/resources/primeng.min.css");
 @import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

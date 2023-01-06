@@ -27,13 +27,15 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-             "node_modules/primeng/resources/themes/omega/theme.css",
+             "node_modules/primeng/resources/primeng.min.css",
              "node_modules/font-awesome/css/font-awesome.css",
-             "node_modules/primeng/resources/primeng.css",
-              "src/styles.css"
+              "node_modules/primeng/resources/primeng.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+                "node_modules/primeflex/primeflex.css",
+                "node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": []
           },
@@ -100,6 +102,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
